@@ -1,0 +1,125 @@
+" Michael Wright .vimrc 
+" mwright@appnexus.com
+
+call pathogen#runtime_append_all_bundles()
+
+set nocompatible " Useful mode, not compatible with vi
+syntax on " Enable syntax highlighting
+
+filetype on " Enable filetype detection
+filetype indent on " Enable filetype-specific indentation
+filetype plugin on " Enable filetype-specific plugins
+set nocp " Non compatible mode, again?
+
+colorscheme inkpot
+set t_Co=256
+
+" Set an orange cursor in insert mode, and a red cursor otherwise.
+" " Works at least for xterm and rxvt terminals.
+" " Does not work for gnome terminal, konsole, xfce4-terminal.
+if &term =~ "xterm\\|rxvt"
+	:silent !echo -ne "\033]12;red\007"
+	let &t_SI = "\033]12;orange\007"
+	let &t_EI = "\033]12;red\007"
+	autocmd VimLeave * :!echo -ne "\033]12;red\007"
+endif
+
+highlight Pmenu ctermbg=238 gui=bold
+highlight visual ctermbg=4
+"set autochdir 
+set backspace=indent,eol,start " Backspace can delete index, EOL and start
+set nobackup " Do not backup files
+set nowritebackup " Do not write backup files
+set noswapfile " Do not use swap files
+set fileformats=unix,dos,mac " Supported file formats
+set iskeyword +=_,$,@,%,# " Possible word separators
+
+set cursorline " Highligh the line the cursor is on
+set vb " Use visual bell instead of beeping
+set incsearch " Search as search terms are typed 
+set matchtime=5 " Amount of time (in 1/10ths of second) to show matching parens 
+set nohlsearch " Stop highlighting search matches when searching is stopped 
+set number " Show line numbers
+set ruler " Show absolute and relative position of cursor 
+set showmatch " Show matching bracket if on screen, when one is typed 
+set showmode " Show INSERT, REPLACE, or VISUAL if in those mode(s)
+set showcmd " Show partial command 
+"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v] " Set status line values
+set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B] " Set status line values
+set scrolloff=8 " Minimum number of lines to keep above and below cursor
+"set rnu " Use relative line numbers
+
+set completeopt= " Set mode for insert mode completion 
+set formatoptions=rq " Automatically insert comment wrappers on return
+set infercase " Use currently typed case when autocompleting, even if matching string is a different case
+set nowrap " Do not wrap lines longer than the screen is wide
+set tabstop=4 " Tabs take 4 spaces
+set shiftwidth=4 " Auto-indent 4 spaces
+set textwidth=80 " Auto-break lines after 80 characters
+autocmd BufNewFile,BufRead *.json set filetype=javascript " Set filetipe for .json
+autocmd BufNewFile,BufRead *.spec.template set filetype=spec " Set filetype for .spec.template
+autocmd FileType cc,cpp,c,h set cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 " Set options for C/C++ files
+autocmd FileType make set noexpandtab shiftwidth=8 " Set options for make files
+
+set foldenable " Allow text folding
+set foldmarker={,} " Show folds with ,
+set foldmethod=indent " Method used to determine fold level
+set foldlevel=100 " Auto-fold levels higher than 100
+
+" Set tags directories
+set tags+=~/tags/impbus
+set tags+=~/tags/bidder
+set tags+=~/tags/systags
+
+" OmniCppComplete
+ let OmniCpp_NamespaceSearch = 1
+ let OmniCpp_GlobalScopeSearch = 1
+ let OmniCpp_ShowAccess = 1
+ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+ let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+ " automatically open and close the popup menu / preview window
+ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+ set completeopt=menuone,menu,longest,preview
+
+" Key Mappings 
+let mapleader = "," " Set comma as the map leader 
+map <F6> :!ctags -R --sort=1 --fields=+iaS --extra=+q --c++-kinds=+defgmpstu -f ~/tags/bidder /usr/local/adnxs/bidder-c/ |  ctags -R --sort=1 --fields=+iaS --extra=+q --c++-kinds=+defgmpstu -f ~/tags/impbus /usr/local/adnxs/impression-bus/<CR> 
+map <F5> :!cscope -R -b <CR> :cs reset <CR>
+map <F7> :make -j 4<CR>
+nnoremap <F2> :set rnu!<CR>
+
+map <Leader>lt :TlistToggle <CR>
+"map <Leader>nt :NERDTree <CR> 
+"possible the greatest map ever found 
+nnoremap ; :
+noremap % v%
+
+autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+
+" *******************************************
+" *******************************************
+" ****** INSERT MODE REMAPPINGS *************
+" *******************************************
+" *******************************************
+inoremap jj <ESC>
+
+"Easier splits navigation - Remapped Caps Lock to Control
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+if has("gui_running")
+	colorscheme void
+    set lines=64
+    set guifont=Consolas\ 10
+    set guioptions-=T
+	set mousehide
+endif
+
+set runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim,/usr/share/vim/vim70
+syntax on 
+set autoindent
