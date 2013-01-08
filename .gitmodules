@@ -1,3 +1,6 @@
 [submodule "vimrc/bundle/clang_complete"]
 	path = vimrc/bundle/clang_complete
 	url = git://github.com/Rip-Rip/clang_complete.git
+[submodule "vimrc/bundle/command-t"]
+	path = vimrc/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
