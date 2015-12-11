@@ -6,3 +6,5 @@
 	pager = 
 [help]
 	autocorrect = 50
+[push]
+	default = simple
