@@ -98,3 +98,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ack='ack-grep --smart-case --cc --cpp --php --json --js --asm --cmake --java --nomake --python --sql'
+alias ackc='ack --c --cpp --color'
+alias afind='ack-grep -il'
+alias cp='cp -i'
+alias diff=colordiff
+alias ls='ls --color='\''auto'\'
+alias ll='ls -lh'
+alias l.='ls -d .* --color='\''auto'\'
+alias la='ls -lAh'
+alias less='less -R'
+alias mv='mv -i'
+alias mysql_icq='mysql --i-am-a-dummy --prompt '\''mwright ICQ> '\'' -umwright -pIdis1agree -D icq_metrics -h mysql-icq-metrics-master.prod.adnxs.net'
+alias mysql_prod='mysql --i-am-a-dummy --prompt '\''mwright PROD> '\'' -umwright -pIdis1agree -D api -h mysql-slave.prod.nym1.adnxs.net'
+alias mysql_sand='mysql --i-am-a-dummy --prompt '\''mwright SAND> '\'' -umwright -pIdis1agree -D api -h mysql-master.sand-08.adnxs.net'
+alias mysql_stage='mysql --i-am-a-dummy --prompt '\''mwright STAGE> '\'' -umwright -pIdis1agree -D api -h 03.bm-mysql.stage.lax1'
+alias mysql_trans='mysql --i-am-a-dummy --prompt '\''mwright TRANS> '\'' -umwright -pIdis1agree -D transaction -h mysql-transaction-slave.prod.adnxs.net'
+alias nyan='nc -v nyancat.dakko.us 23'
+alias nz_biggie='nzsql -h vip1.npsc.nym2 -u u_mwright -pw out0fthecorn3r -db adnexus_rpt_prod'
+alias nz_mwright='nzsql -host 02.npsa.lax1 -u u_mwright -pw omgsuperfast -db mwright'
+alias nz_sand='nzsql -u ADNEXUS_RPT_SAND_RO -pw fpdjmuOh -host 01.npsb.lax1 -db ADNEXUS_RPT_SAND_08'
+alias nz_sand_rw='nzsql -u ADNEXUS_RPT_SAND_RW -pw bvccswws -host 01.npsb.lax1 -db ADNEXUS_RPT_SAND_08'
+alias nz_tupac='nzsql -h vip1.npsc.lax1 -u u_mwright -pw s@dc0rner -db adnexus_rpt_prod'
+alias please=sudo
+alias vert_budget='LANG=en_US.UTF-8 /opt/vertical/bin/vsql -h vertica-budget-internal.prod.adnxs.net -U mwright -w back1nthec0rn3r'
+alias vert_primary='LANG=en_US.UTF-8 /opt/vertica/bin/vsql -h vertica-primary.prod.nym2.adnxs.net -U mwright -w back1nthec0rn3r'
+alias vert_report='LANG=en_US.UTF-8 /opt/vertica/bin/vsql -h vertica-reporting-internal.prod.adnxs.net -U mwright -w back1nthec0rn3r'
+alias vi=vim

@@ -1,0 +1,8 @@
+[user]
+	name = Mike Wright
+	email = mwright@appnexus.com
+[core]
+	editor = vim
+	pager = 
+[help]
+	autocorrect = 50
