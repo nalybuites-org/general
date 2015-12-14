@@ -1,0 +1,11 @@
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+
+export SHELL=/usr/bin/zsh
+exec /usr/bin/zsh -l
