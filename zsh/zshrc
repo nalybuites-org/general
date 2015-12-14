@@ -27,7 +27,7 @@ ZSH_THEME="topbar"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages colorize command-not-found common-aliases copydir copyfile cp encode64 extract git git-extras gitignore git-prompt git-remote-branch jira node npm ssh-agent sudo ubuntu vim-interaction)
+plugins=(colored-man-pages colorize command-not-found common-aliases copydir copyfile cp encode64 extract git git-extras gitignore git-prompt git-remote-branch jira sudo ubuntu vim-interaction)
 
 # User configuration
 
@@ -101,14 +101,12 @@ source $ZSH/oh-my-zsh.sh
 alias ack='ack-grep --smart-case --cc --cpp --php --json --js --asm --cmake --java --nomake --python --sql'
 alias ackc='ack --c --cpp --color'
 alias afind='ack-grep -il'
-alias cp='cp -i'
 alias diff=colordiff
 alias ls='ls --color='\''auto'\'
-alias ll='ls -lh'
+alias ll='ls -halt'
 alias l.='ls -d .* --color='\''auto'\'
 alias la='ls -lAh'
 alias less='less -R'
-alias mv='mv -i'
 alias mysql_icq='mysql --i-am-a-dummy --prompt '\''mwright ICQ> '\'' -umwright -pIdis1agree -D icq_metrics -h mysql-icq-metrics-master.prod.adnxs.net'
 alias mysql_prod='mysql --i-am-a-dummy --prompt '\''mwright PROD> '\'' -umwright -pIdis1agree -D api -h mysql-slave.prod.nym1.adnxs.net'
 alias mysql_sand='mysql --i-am-a-dummy --prompt '\''mwright SAND> '\'' -umwright -pIdis1agree -D api -h mysql-master.sand-08.adnxs.net'

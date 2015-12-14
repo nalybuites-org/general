@@ -1,0 +1,30 @@
+[scm]
+editor=vim
+
+impbus.map=object:^libck[\.-],/home/mwright/.hydra_src/ck
+impbus.map=function:^ck_,/home/mwright/.hydra_src/ck
+impbus.ignore=object:^lib
+impbus.map=/home/mwright/.hydra_src/impbus
+impbus.trigger=/home/mwright/.hydra_src/impbus,tag,git -C %s pull -q origin
+impbus.trigger=/home/mwright/.hydra_src/impbus,tag,cd %s && git checkout -q tags/%0 && git submodule update -q
+
+bidderc.map=object:^libck[\.-],/home/mwright/.hydra_src/ck
+bidderc.map=function:^ck_,/home/mwright/.hydra_src/ck
+bidderc.ignore=object:^lib
+bidderc.map=/home/mwright/.hydra_src/bidderc
+bidderc.trigger=/home/mwright/.hydra_src/bidderc,tag,git -C %s pull -q origin
+bidderc.trigger=/home/mwright/.hydra_src/bidderc,tag,cd %s && git checkout -q tags/%0 && git submodule update -q
+
+cookiemonster.map=object:^libck[\.-],/home/mwright/.hydra_src/ck
+cookiemonster.map=function:^ck_,/home/mwright/.hydra_src/ck
+cookiemonster.ignore=object:^lib
+cookiemonster.map=/home/mwright/.hydra_src/cookiemonster
+cookiemonster.trigger=/home/mwright/.hydra_src/cookiemonster,tag,git -C %s pull -q origin
+cookiemonster.trigger=/home/mwright/.hydra_src/cookiemonster,tag,cd %s && git checkout -q tags/%0 && git submodule update -q
+
+packrat.map=object:^libck[\.-],/home/mwright/.hydra_src/ck
+packrat.map=function:^ck_,/home/mwright/.hydra_src/ck
+packrat.ignore=object:^lib
+packrat.map=/home/mwright/.hydra_src/packrat
+packrat.trigger=/home/mwright/.hydra_src/packrat,tag,git -C %s pull -q origin
+packrat.trigger=/home/mwright/.hydra_src/packrat,tag,cd %s && git checkout -q tags/%0 && git submodule update -q

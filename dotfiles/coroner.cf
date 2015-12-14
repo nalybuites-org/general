@@ -1,0 +1,21 @@
+[universe]
+name = appnexus
+write = backtrace.adnxs.net:4096
+read = backtrace.adnxs.net:4097
+
+[token]
+bidder = d1325bb5d2d4d215e65ee39ace3e34d34bbfffa1b53d475ed32000aa409aa33f
+cookiemonster = 75c2c5b3103833da1f486e663cb92b9e6b22021bc3ba339148cd96a9b5903079
+impbus = 98f0343630ac3c5c965252995a967026ce29dd729c50745e1b86a9e5dc162dae
+packrat = ae2740476172fbaea03791b6e599d0d3f3c1e293218648fc22320112d3527977
+ratsoda = 34970fdefa3d66892b54977f1efd2f98f299cf907d1a5c9c8d0ba75024c56cd6
+
+[default]
+list.frequency=tag,collection,environment,dc,uname.release,uname.version
+list.expand=dc,application,hostname,tag,collection,environment,uname.release,uname.version
+list.sort=hostname
+list.instances=5
+
+[general]
+viewer = /opt/backtrace/bin/hydra %s
+

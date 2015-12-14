@@ -8,3 +8,5 @@
 	autocorrect = 50
 [push]
 	default = simple
+[url "https://github.com/"]
+	insteadOf = git://github.com/
