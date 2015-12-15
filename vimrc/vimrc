@@ -93,7 +93,7 @@ if version >= 703
     set colorcolumn=120
     highlight ColorColumn ctermbg=8
     highlight OverLength ctermbg=red ctermfg=white guibg=#593939
-    match OverLength /\%>120v.\+/
+    match OverLength /\%>121v.\+/
 endif
 " turn on whitespace
 
@@ -129,6 +129,8 @@ au BufNewFile,BufRead *.ejs setlocal filetype=html
 au BufNewFile,BufRead *.spec.template setlocal filetype=spec
 au BufNewFile,BufRead *.json setlocal filetype=json
 au BufNewFile,BufRead *.sql setlocal filetype=sql
+au BufNewFile,BufRead *.js setlocal filetype=javascript
+au BufNewFile,BufRead *.json setlocal filetype=json
 "au BufNewFile,BufRead *.sh setlocal filetype=bash
 
 " for C-like programming, have automatic indentation:
@@ -180,10 +182,6 @@ set pumheight=15
 
 " Let vim powerline be fancy
 let g:Powerline_symbols = 'fancy'
-let g:CommandTScanDotDirectories = 1
-let g:CommandTAlwaysShowDotFiles = 1
-let g:ycm_confirm_extra_conf = 0
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -191,6 +189,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:vim_markdown_folding_disabled=1
 
 " YouCompleteMe Settings
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -199,6 +198,8 @@ let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDecalaration<CR>
 
 " CommandT Settings
+let g:CommandTScanDotDirectories = 1
+let g:CommandTAlwaysShowDotFiles = 1
 let g:CommandTScanDotDirectories = 1
 let g:CommandTAlwaysShowDotFiles = 1
 
