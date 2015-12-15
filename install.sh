@@ -5,6 +5,9 @@ git clone https://github.com/nalybuites/general.git ~/personal/general
 
 echo "--[ Installing vimrc"
 sh -c "$(curl -fsSL https://raw.github.com/asweeney86/vimrc/master/install.sh)"
+pushd ~/personal/general/vimrc/bundle/Command-T/ruby/command-t
+ruby extconf.rb
+make
 
 echo "--[ Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
