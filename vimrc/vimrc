@@ -195,6 +195,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_min_num_of_chars_for_completion = 99
+let g:ycm_show_diagnostics_ui = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDecalaration<CR>
 
 " CommandT Settings
