@@ -8,6 +8,10 @@ sh -c "$(curl -fsSL https://raw.github.com/asweeney86/vimrc/master/install.sh)"
 pushd ~/personal/general/vimrc/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
+popd
+pushd ~/personal/general/vimrc/bundle/YouCompleteMe
+./install.py --clang-completer
+popd
 
 echo "--[ Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
