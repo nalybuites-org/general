@@ -134,7 +134,7 @@ au BufNewFile,BufRead *.json setlocal filetype=json
 "au BufNewFile,BufRead *.sh setlocal filetype=bash
 
 " for C-like programming, have automatic indentation:
-autocmd FileType c,cpp,slang,make,automake setlocal cinoptions=+4,(4 cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType c,cpp,slang,make,automake setlocal cinoptions=+4,(4:0 cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
 
 autocmd FileType php setlocal cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
 
