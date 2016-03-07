@@ -40,6 +40,7 @@ Plugin 'Jinja'
 Plugin 'bling/vim-airline'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'vim-scripts/a.vim'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -204,6 +205,9 @@ let g:CommandTScanDotDirectories = 1
 let g:CommandTAlwaysShowDotFiles = 1
 let g:CommandTScanDotDirectories = 1
 let g:CommandTAlwaysShowDotFiles = 1
+
+" Git Gutter Toggle
+noremap <C-g> :GitGutterToggle<CR>
 
 " tab navigation like firefox
 nnoremap <A-Left> :tabprevious<CR>
