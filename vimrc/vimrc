@@ -208,6 +208,7 @@ let g:CommandTAlwaysShowDotFiles = 1
 
 " Git Gutter Toggle
 noremap <C-g> :GitGutterToggle<CR>
+let g:gitgutter_highlight_lines = 1
 
 " tab navigation like firefox
 nnoremap <A-Left> :tabprevious<CR>
