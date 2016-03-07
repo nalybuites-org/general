@@ -109,7 +109,7 @@ alias nyan='nc -v nyancat.dakko.us 23'
 alias please=sudo
 alias vi=vim
 
-if [ -f ~/project/general/dotfiles/aliases]; then
+if [ -f ~/project/general/dotfiles/aliases ]; then
     source ~/project/general/dotfiles/aliases
 fi
 
