@@ -1,6 +1,6 @@
 [user]
+	email = mike.wright@xandr.com
 	name = Mike Wright
-	email = mwright@appnexus.com
 [core]
 	editor = vim
 	pager = 
