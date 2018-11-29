@@ -40,6 +40,7 @@ Plugin 'Jinja'
 Plugin 'bling/vim-airline'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'vim-scripts/a.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
@@ -136,7 +137,7 @@ au BufNewFile,BufRead *.json setlocal filetype=json
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,make,automake setlocal cinoptions=+4,(4:0 cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
 
-autocmd FileType php setlocal cindent noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType php setlocal cindent noexpandtab shiftwidth=4 tabstop=8 softtabstop=8
 
 " for actual C (not C++) programming where comments have explicit end
 " characters, if starting a new line in the middle of a comment automatically
@@ -197,6 +198,8 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_show_diagnostics_ui = 1
+let g:ycm_error_symbol = '!!'
+let g:ycm_warning_symbol = '>>'
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDecalaration<CR>
 
 " CommandT Settings
