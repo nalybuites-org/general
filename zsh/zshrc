@@ -53,6 +53,7 @@ plugins=(colored-man-pages colorize command-not-found common-aliases copydir cop
 
 # User configuration
 
+export PATH="/home/mwright/src/git-when-merged/bin:$PATH"
 export PATH="/usr/games:$PATH"
 export PATH="/usr/local/games:$PATH"
 export PATH="/usr/local/nz/bin64:$PATH"
@@ -70,10 +71,14 @@ export PATH="/home/mwright/bin:$PATH"
 export PATH="/opt/backtrace/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export ANM_PATH=/home/mwright/master-rtp-messages/protos/
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,6 +111,11 @@ alias less='less -R'
 alias nyan='nc -v nyancat.dakko.us 23'
 alias please=sudo
 alias vi=vim
+alias atf-docker='sudo python ./node_modules/adserver-regressions/bin/docker_test_runner.py --mountdir $HOME -c 4 16c9e7f17888 '
+
+if [ -f ~/.passwords ]; then
+    source ~/.passwords
+fi
 
 if [ -f ~/project/general/dotfiles/aliases ]; then
     source ~/project/general/dotfiles/aliases
