@@ -13,12 +13,12 @@
 
 
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+typeset +H return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # color vars
-eval my_gray='$FG[237]'
-eval my_orange='$FG[214]'
-eval my_ltblue='$FG[075]'
+typeset +H my_gray="$FG[237]"
+typeset +H my_orange="$FG[214]"
+typeset +H my_ltblue="$FG[075]"
 
 precmd() {
     local TERMWIDTH
@@ -32,18 +32,13 @@ precmd() {
     local hright_len=${#HRIGHT}
     local mid_len
     (( mid_len=$TERMWIDTH - ($hleft_len + $hright_len) - 1 ))
-#    print "$FG[237]$HLEFT ${(l:$mid_len:: :)} $HRIGHT$reset_color"
     print "\033[38;5;237m$HLEFT ${(l:$mid_len:: :)} \033[38;5;214m$HRIGHT$reset_color"
 }
 
 # primary prompt
-PROMPT='%{$FG[032]%}%~\
-%{$(git_prompt_info)%} \
-%{$FG[105]%}%{%(!.#.»)%}%{$reset_color%} '
-PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-unset RPS1
-unset RPROMPT
-#RPS1='%{${return_code}%}'
+PS1='%{$FG[032]%}%~$(git_prompt_info) %{$FG[105]%}%(!.#.»)%{$reset_color%} '
+PS2='%{$fg[red]%}\ %{$reset_color%}'
+RPS1='${return_code}'
 
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$my_ltblue%}(branch:"
