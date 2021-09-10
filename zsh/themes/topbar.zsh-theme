@@ -24,14 +24,15 @@ precmd() {
     local TERMWIDTH
     (( TERMWIDTH = ${COLUMNS} - 1))
     USERNAME=`id -un`
-    HOSTNAME=`hostname --long`
+    HOSTNAME=`hostname`
     HLEFT="$USERNAME@$HOSTNAME"
     HRIGHT=`date +'%F %T %Z'`
 
-    local hleft_len=${#HLEFT} 
+    local hleft_len=${#HLEFT}
     local hright_len=${#HRIGHT}
     local mid_len
     (( mid_len=$TERMWIDTH - ($hleft_len + $hright_len) - 1 ))
+#    print "$FG[237]$HLEFT ${(l:$mid_len:: :)} $HRIGHT$reset_color"
     print "\033[38;5;237m$HLEFT ${(l:$mid_len:: :)} \033[38;5;214m$HRIGHT$reset_color"
 }
 
