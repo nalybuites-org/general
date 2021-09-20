@@ -18,6 +18,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 echo "--[ Setting up symlinks"
 ln -s ~/personal/general/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/personal/general/dotfiles/gitignore ~/.gitignore_global
 ln -s ~/personal/general/zsh/themes/topbar.zsh-theme ~/.oh-my-zsh/themes/topbar.zsh-theme
 ln -s ~/personal/general/zsh/zshrc ~/.zshrc
 rm -f ~/.vimrc
