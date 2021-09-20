@@ -4,7 +4,7 @@
 [core]
 	editor = vim
 	pager = 
-	excludesFile = ~/.gitignore
+	excludesFile = ~/.gitignore_global
 [help]
 	autocorrect = 50
 [push]
