@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SHELL := /bin/bash
+
 echo "--[ Clonging repos"
 git clone https://github.com/nalybuites/general.git ~/personal/general
 
