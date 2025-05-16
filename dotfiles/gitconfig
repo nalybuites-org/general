@@ -1,5 +1,5 @@
 [user]
-	email = mike.wright@usebutton.com
+	email = nalybuites@gmail.com
 	name = Mike Wright
 [core]
 	editor = vim
@@ -9,5 +9,3 @@
 	autocorrect = 50
 [push]
 	default = simple
-[url "https://github.com/"]
-	insteadOf = git://github.com/

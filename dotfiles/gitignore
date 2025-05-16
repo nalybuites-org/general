@@ -1,2 +1,5 @@
 .DS_Store
 
+vimrc/autoload
+vimrc/backup
+vimrc/plugged
