@@ -19,6 +19,9 @@ mkdir ~/.vim/autoload ~/.vim/backup ~/.vim/plugged
 rm -f ~/.vimrc
 ln -s ~/personal/general/vimrc/vimrc ~/.vimrc
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimrc
+
 echo "--[ Attempt setup of Vim plugins"
 vim -c 'PlugInstall' \
     -c 'qa!'
