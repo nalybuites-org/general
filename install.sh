@@ -20,7 +20,7 @@ rm -f ~/.vimrc
 ln -s ~/personal/general/vimrc/vimrc ~/.vimrc
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimrc
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "--[ Attempt setup of Vim plugins"
 vim -c 'PlugInstall' \
@@ -28,12 +28,16 @@ vim -c 'PlugInstall' \
 
 # This has a bunch of depenedencies which may need to be resolved, specifically
 # Vim compiled with Python3, python-dev, ruby-dev, golang, and Clang.
-pushd ~/.vim/pluggd/YouCompleteMe
+
+# Uncomment the below 2 lines for Ubuntu
+# sudo apt update
+# sudo apt install cmake python3-dev clang golang npm default-jre default-jdk
+pushd ~/.vim/plugged/YouCompleteMe
 python3 install.py --all
 popd
 
 # This may require further compilation to get working.
-pushd ~/.vim/pluggs/command-t
+pushd ~/.vim/plugged/command-t
 make
 popd
 
